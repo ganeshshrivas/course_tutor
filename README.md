@@ -1,24 +1,29 @@
-# README
+# Course & Tutor API – Assignment Project
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is an **API-only Rails application** built to manage courses and their associated tutors.
 
-Things you may want to cover:
+---
 
-* Ruby version
+## 🚀 Tech Stack
 
-* System dependencies
+- **Ruby**: `3.3.1`
+- **Rails**: `7.2.2.1` (API-only mode)
+- **Database**: PostgreSQL
+- **Environment Management**: [`dotenv-rails`](https://github.com/bkeepers/dotenv)
+- **Authentication**: HTTP Basic Authentication
 
-* Configuration
+---
 
-* Database creation
+## 🔐 API Authentication
 
-* Database initialization
+All API endpoints are protected via **Basic Auth**.
 
-* How to run the test suite
+| Credential | Value        |
+|------------|--------------|
+| Username   | `ASSIGNMENT` |
+| Password   | `ProMobi`    |
 
-* Services (job queues, cache servers, search engines, etc.)
+### 🔁 Example usage with curl:
 
-* Deployment instructions
-
-* ...
+```bash
+curl -u ASSIGNMENT:ProMobi http://localhost:3000/api/v1/courses
