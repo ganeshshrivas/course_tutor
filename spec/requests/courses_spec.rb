@@ -26,6 +26,18 @@ RSpec.describe "Courses API", type: :request do
       }
     end
 
+    let(:invalid_params) do
+      {
+        course: {
+          name: "Mathes",
+          tutors_attributes: [
+            { name: "test1" },
+            { name: "" }
+          ]
+        }
+      }
+    end
+
     it "creates a course with tutors" do
       post "/api/v1/courses", params: valid_params.to_json, headers: headers
 
@@ -52,6 +64,15 @@ RSpec.describe "Courses API", type: :request do
 
       expect(response).to have_http_status(:unprocessable_entity)
       expect(JSON.parse(response.body)).to have_key("errors")
+    end
+
+    it "returns errors when course is valid and tutor is invalid" do
+      post "/api/v1/courses", params: invalid_params.to_json, headers: headers
+
+      json = JSON.parse(response.body)
+      expect(response).to have_http_status(:unprocessable_entity)
+      expect(JSON.parse(response.body)).to have_key("errors")
+      expect(json["errors"]).to include("Tutors name can't be blank")
     end
   end
 

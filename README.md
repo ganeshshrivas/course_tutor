@@ -17,7 +17,7 @@ This is an **API-only Rails application** built to manage courses and their asso
 
 ---
 
-### 🔁 Application setup and running:
+## 🛠️ Setup & Run the Application
 rails db:create db:migrate
 rails s
 
@@ -34,8 +34,9 @@ All API endpoints are protected via **Basic Auth**.
 rails db:drop db:create db:migrate RAILS_ENV=test
 bundle exec rspec
 
-### 🔁 Example usage with curl:
+### Example usage with curl:
 
 ```bash
 curl -u ASSIGNMENT:ProMobi http://localhost:3000/api/v1/courses
+
 
