@@ -4,13 +4,13 @@ module Api
     class CoursesController < ApplicationController
       def index
         courses = Course.includes(:tutors)
-        render json: courses.as_json(include: :tutors)
+        render json: courses
       end
 
       def create
         course = Course.new(course_params)
         if course.save
-          render json: course.as_json(include: :tutors), status: :created
+          render json: course, status: :created
         else
           render json: { errors: course.errors.full_messages }, status: :unprocessable_entity
         end
