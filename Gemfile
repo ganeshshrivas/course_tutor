@@ -45,4 +45,10 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
+
+  #rspec
+  gem 'rspec-rails'
+
+  #Factory bot for creating test data
+  gem 'factory_bot_rails','~> 6.5.0'
 end
