@@ -27,10 +27,10 @@ gem "bootsnap", require: false
 # gem "image_processing", "~> 1.2"
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin Ajax possible
-gem "rack-cors",'~> 3.0.0'
+gem "rack-cors", "~> 3.0.0"
 
 # serializer for easily manager api response
-gem 'active_model_serializers', '~> 0.10.0'
+gem "active_model_serializers", "~> 0.10.0"
 
 
 group :development, :test do
@@ -46,9 +46,9 @@ group :development, :test do
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
 
-  #rspec
-  gem 'rspec-rails'
+  # rspec
+  gem "rspec-rails"
 
-  #Factory bot for creating test data
-  gem 'factory_bot_rails','~> 6.5.0'
+  # Factory bot for creating test data
+  gem "factory_bot_rails", "~> 6.5.0"
 end

@@ -19,7 +19,7 @@ module Api
       private
 
       def course_params
-        params.require(:course).permit(:name, tutors_attributes: [:name])
+        params.require(:course).permit(:name, tutors_attributes: [ :name ])
       end
     end
   end

@@ -1,7 +1,7 @@
 class Tutor < ApplicationRecord
-  #Associations
+  # Associations
   belongs_to :course
 
-  #Validations
+  # Validations
   validates :name, presence: true
 end

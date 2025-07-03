@@ -1,12 +1,11 @@
 class Course < ApplicationRecord
-  #Associations
+  # Associations
   has_many :tutors, dependent: :destroy
   accepts_nested_attributes_for :tutors
 
-  #Validations
+  # Validations
   validates :name, presence: true
   validate :validate_name_uniqueness
-
 
   private
     def validate_name_uniqueness
