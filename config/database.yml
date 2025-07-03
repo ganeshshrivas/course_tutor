@@ -1,0 +1,25 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: <%= ENV['DATABASE_HOST'] || 'localhost' %>
+  schema_search_path: "public,shared_extensions"
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+
+test:
+  <<: *default
+  database: <%= ENV['TEST_DATABASE_NAME'] %>
+  username: <%= ENV['TEST_DATABASE_USERNAME'] %>
+  password: <%= ENV['TEST_DATABASE_PASSWORD'] %>
+
+development:
+  <<: *default
+  database: <%= ENV['DEV_DATABASE_NAME'] %>
+  username: <%= ENV['DEV_DATABASE_USERNAME'] %>
+  password: <%= ENV['DEV_DATABASE_PASSWORD'] %>
+
+production:
+  <<: *default
+  database: <%= ENV['PROD_DATABASE_NAME'] %>
+  username: <%= ENV['PROD_DATABASE_USERNAME'] %>
+  password: <%= ENV['PROD_DATABASE_PASSWORD'] %>
