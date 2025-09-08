@@ -50,5 +50,5 @@ group :development, :test do
   gem "rspec-rails"
 
   # Factory bot for creating test data
-  gem "factory_bot_rails", "~> 6.5.0"
+  gem "factory_bot_rails", "~> 6.5.1"
 end
