@@ -30,7 +30,7 @@ gem "bootsnap", require: false
 gem "rack-cors", "~> 3.0.0"
 
 # serializer for easily manager api response
-gem "active_model_serializers", "~> 0.10.0"
+gem "active_model_serializers", "~> 0.10.16"
 
 
 group :development, :test do
